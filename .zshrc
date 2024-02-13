@@ -28,6 +28,8 @@ HISTFILE=~/.zsh_history
 set -o vi
 
 alias ls='ls -F'
+alias k='kubectl'
+
 alias gitget='cd ~/git/code; git fetch; git pull origin main; cd'
 alias gitpush='cd ~/git/code; git add .; git commit; git push --set-upstream origin main; cd'
 
