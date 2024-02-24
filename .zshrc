@@ -28,7 +28,7 @@ HISTFILE=~/.zsh_history
 set -o vi
 
 alias ls='ls -F'
-if [ -f /usr/bin/kubectl ]; then
+if -f /usr/bin/kubectl; then
     alias k='kubectl'
 fi
 
