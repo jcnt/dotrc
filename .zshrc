@@ -45,5 +45,5 @@ alias gitpush='cd ~/git/code; git add .; git commit; git push --set-upstream ori
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd'
 alias dotpush='cd ~/git/dotrc; git add .; git commit; git push --set-upstream origin main; cd'
 alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd'
-alias zsudo='sudo su - -s /usr/bin/zsh'
+alias zsu='sudo su - -s /usr/bin/zsh'
 
