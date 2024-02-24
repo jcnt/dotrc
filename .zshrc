@@ -11,14 +11,21 @@ if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
 fi
 
 PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
-plugins=(
-  kubectl
-  go
-)
+
+
+if -f /usr/bin/kubectl; then
+    plugins=(
+      kubectl
+      go
+    )
+fi
 
 autoload -Uz compinit
 compinit
-source <(kubectl completion zsh)
+
+if -f /usr/bin/kubectl; then
+    source <(kubectl completion zsh)
+fi
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
