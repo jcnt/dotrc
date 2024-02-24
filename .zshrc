@@ -13,7 +13,7 @@ fi
 PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
 
 
-if -f /usr/bin/kubectl; then
+if [ -f /usr/bin/kubectl ]; then
     plugins=(
       kubectl
       go
@@ -23,7 +23,7 @@ fi
 autoload -Uz compinit
 compinit
 
-if -f /usr/bin/kubectl; then
+if [ -f /usr/bin/kubectl ]; then
     source <(kubectl completion zsh)
 fi
 
@@ -35,7 +35,7 @@ HISTFILE=~/.zsh_history
 set -o vi
 
 alias ls='ls -F'
-if -f /usr/bin/kubectl; then
+if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
 fi
 
