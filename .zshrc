@@ -1,6 +1,6 @@
 autoload -U colors && colors
 
-PS1=%{$fg[blue]%}"%m %{$fg[yellow]%}%~ %{$fg[green]%}%# %{$reset_color%}"
+PS1=%{$fg[cyan]%}"%m %{$fg[yellow]%}%~ %{$fg[green]%}%# %{$reset_color%}"
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
   then PS1=%{$fg[red]%}"work %{$fg[yellow]%}%~ %{$fg[green]%}%# %{$reset_color%}"
@@ -10,7 +10,7 @@ if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
   then PS1=%{$fg[red]%}"thirteen %{$fg[yellow]%}%~ %{$fg[green]%}%# %{$reset_color%}"
 fi
 
-PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/
+PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
 plugins=(
   kubectl
   go
