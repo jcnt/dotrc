@@ -1,13 +1,16 @@
 autoload -U colors && colors
 
 PS1=%{$fg[cyan]%}"%m %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+alias zsu='sudo su - -s /usr/bin/zsh'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
   then PS1=%{$fg[red]%}"work %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+  alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
   then PS1=%{$fg[red]%}"thirteen %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+  alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
@@ -27,9 +30,9 @@ if [ -f /usr/bin/kubectl ]; then
     source <(kubectl completion zsh)
 fi
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 set -o vi
@@ -40,11 +43,10 @@ if [ -f /usr/bin/kubectl ]; then
 fi
 
 alias codeget='cd ~/git/code; git fetch; git pull origin main; cd'
-alias codepush='cd ~/git/code; git add .; git commit; git push --set-upstream origin main; cd'
+alias codepush='cd ~/git/code; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
 alias scriptget='cd ~/script git fetch; git pull origin main; cd'
-alias scriptpush='cd ~/script; git add .; git commit; git push --set-upstream origin main; cd'
+alias scriptpush='cd ~/script; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd'
-alias dotpush='cd ~/git/dotrc; git add .; git commit; git push --set-upstream origin main; cd'
+alias dotpush='cd ~/git/dotrc; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
 alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd'
-alias zsu='sudo su - -s /usr/bin/zsh'
 
