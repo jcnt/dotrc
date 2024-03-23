@@ -37,7 +37,7 @@ HISTFILE=~/.zsh_history
 
 set -o vi
 
-alias ls='ls -FG'
+alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
 fi
