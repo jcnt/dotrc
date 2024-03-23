@@ -4,5 +4,4 @@ set ruler
 set number
 set linebreak
 set scrolloff=2
-set cursorline
 
