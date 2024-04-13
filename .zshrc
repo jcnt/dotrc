@@ -49,4 +49,3 @@ alias scriptpush='cd ~/script; git add .; git commit -m "`date`"; git push --set
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd'
 alias dotpush='cd ~/git/dotrc; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
 alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd'
-
