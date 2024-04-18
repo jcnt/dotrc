@@ -46,7 +46,6 @@ set -o vi
 alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
-    export KUBECONFIG=/etc/kubernetes/admin.conf
 fi
 
 alias codeget='cd ~/git/code; git fetch; git pull origin main; cd'
