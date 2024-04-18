@@ -15,8 +15,8 @@ fi
 
 if [[ $HOST = "jump" ]]
     then
-        alias k1='cp ~/.kube/config.cluster1 ~/kube/config'
-        alias k2='cp ~/.kube/config.cluster2 ~/kube/config'
+        alias k1='cp ~/.kube/config.cluster1 ~/.kube/config'
+        alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
 fi
 
 PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
