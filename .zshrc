@@ -48,10 +48,11 @@ if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
 fi
 
-alias codeget='cd ~/git/code; git fetch; git pull origin main; cd'
-alias codepush='cd ~/git/code; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
-alias scriptget='cd ~/script git fetch; git pull origin main; cd'
-alias scriptpush='cd ~/script; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
-alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd'
-alias dotpush='cd ~/git/dotrc; git add .; git commit -m "`date`"; git push --set-upstream origin main; cd'
-alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd'
+alias codeget='cd ~/git/code; git fetch; git pull origin main; cd -'
+alias codepush='cd ~/git/code; git add .; git commit -m "`date`"; git push; cd -'
+alias scriptget='cd ~/script git fetch; git pull origin main; cd -'
+alias scriptpush='cd ~/script; git add .; git commit -m "`date`"; git push; cd -'
+alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
+alias dotpush='cd ~/git/dotrc; git add .; git commit -m "`date`"; git push; cd -'
+alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd -'
+
