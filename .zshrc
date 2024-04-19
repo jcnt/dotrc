@@ -19,7 +19,7 @@ if [[ $HOST = "jump" ]]
         alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
 fi
 
-PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
+PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/:/opt/pwx/bin/
 
 
 if [ -f /usr/bin/kubectl ]; then
