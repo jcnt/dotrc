@@ -6,7 +6,6 @@ alias zsu='sudo su - -s /usr/bin/zsh'
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
   then PS1=%{$fg[red]%}"work %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
   alias zsu="sudo su -l root -c '/bin/zsh'"
-  alias vi="nvim"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
@@ -26,6 +25,9 @@ if [[ $OSTYPE = "darwin23.0" ]]
         PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
 fi
 
+if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
+    alias vi="nvim"
+fi        
 
 if [ -f /usr/bin/kubectl ]; then
     plugins=(
