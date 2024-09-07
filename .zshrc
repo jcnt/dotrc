@@ -1,15 +1,15 @@
 autoload -U colors && colors
 
-PS1=%{$fg[cyan]%}"%m %{$fg[yellow]%}[%1~] %{$fg_bold[green]%}%# %{$reset_color%}"
+PS1=%{%F{cyan}%}"%m %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
 alias zsu='sudo su - -s /usr/bin/zsh'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
-  then PS1=%{$fg[red]%}"work %{$fg[yellow]%}[%1~] %{$fg_bold[green]%}%# %{$reset_color%}"
+  then PS1=%{%F{red}%}"work %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
-  then PS1=%{$fg[red]%}"thirteen %{$fg[yellow]%}[%1~] %{$fg_bold[green]%}%# %{$reset_color%}"
+  then PS1=%{%F{red}%}"thirteen %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
