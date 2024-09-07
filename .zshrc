@@ -60,5 +60,5 @@ alias codeget='cd ~/git/code; git fetch; git pull origin main; cd -'
 alias codepush='cd ~/git/code; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
 alias dotpush='cd ~/git/dotrc; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
-alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd -'
+alias dotclone='rm -rf ~/git/dotrc; git clone https://github.com/jcnt/dotrc ~/git/dotrc/; cd -'
 
