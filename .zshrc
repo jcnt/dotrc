@@ -1,15 +1,15 @@
 autoload -U colors && colors
 
-PS1=%{$fg[cyan]%}"%m %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+PS1=%{$fg[cyan]%}"%m %{$fg[yellow]%}[%1~] %{$fg[green]%}%# %{$reset_color%}"
 alias zsu='sudo su - -s /usr/bin/zsh'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
-  then PS1=%{$fg[red]%}"work %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+  then PS1=%{$fg[red]%}"work %{$fg[yellow]%}[%1~] %{$fg[green]%}%# %{$reset_color%}"
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
-  then PS1=%{$fg[red]%}"thirteen %{$fg[yellow]%}%1~ %{$fg[green]%}%# %{$reset_color%}"
+  then PS1=%{$fg[red]%}"thirteen %{$fg[yellow]%}[%1~] %{$fg[green]%}%# %{$reset_color%}"
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
@@ -57,8 +57,8 @@ fi
 
 alias p="python3"
 alias codeget='cd ~/git/code; git fetch; git pull origin main; cd -'
-alias codepush='cd ~/git/code; git add .; git commit -m "`date`"; git push; cd -'
+alias codepush='cd ~/git/code; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
-alias dotpush='cd ~/git/dotrc; git add .; git commit -m "`date`"; git push; cd -'
+alias dotpush='cd ~/git/dotrc; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotclone='rm -rf ~/git/dotrc; cd ~/git; git clone https://github.com/jcnt/dotrc; cd -'
 
