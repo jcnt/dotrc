@@ -19,7 +19,11 @@ return {
     -- Recommended settings to disable default netrw file explorer
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    require("nvim-tree").setup(opts)
+    require("nvim-tree").setup({
+        view = {
+                number = true;
+                relativenumber = true;
+            }
+        })
   end
 }
-
