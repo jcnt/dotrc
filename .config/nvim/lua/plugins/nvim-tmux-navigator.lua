@@ -5,3 +5,4 @@ return {
     vim.keymap.set('n', 'C-k', ':TmuxNavigateUp<CR>'),
     vim.keymap.set('n', 'C-l', ':TmuxNavigateRight<CR>')
 }
+
