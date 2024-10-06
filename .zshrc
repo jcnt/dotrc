@@ -44,7 +44,10 @@ if [[ $HOST = "jump" ]]
         alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $OSTYPE = "darwin23.0" ]]
+    then
+        PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
+fi
 
 if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
     alias vi="nvim"
