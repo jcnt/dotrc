@@ -38,7 +38,7 @@ if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
-if [[ $HOST = "jjuhasz--MacBookPro18" || $HOST = "jjuhaszQJHD2.vmware.com" || $HOST = "jump" || $HOST = "jjrhel"]]
+if [[ $HOST = "jjuhasz--MacBookPro18" || $HOST = "jjuhaszQJHD2.vmware.com" || $HOST = "jump" || $HOST = "jjrhel"]]; then
     TESTENV="hello"
 fi
 
