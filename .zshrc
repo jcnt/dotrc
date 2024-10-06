@@ -1,5 +1,28 @@
 autoload -U colors && colors
 
+# set home for zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# download zinit if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi 
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+# zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+
+# NOW setup PS1 
+#
 NEWLINE=$'\n'
 
 PS1=${NEWLINE}%{%F{cyan}%}"%m %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
@@ -21,11 +44,7 @@ if [[ $HOST = "jump" ]]
         alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
 fi
 
-
-if [[ $OSTYPE = "darwin23.0" ]]
-    then
-        PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
-fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
     alias vi="nvim"
@@ -38,8 +57,6 @@ if [ -f /usr/bin/kubectl ]; then
     )
 fi
 
-autoload -Uz compinit
-compinit
 
 if [ -f /usr/bin/kubectl ]; then
     source <(kubectl completion zsh)
@@ -47,8 +64,26 @@ fi
 
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
+# bindkey '^f' autosuggest-accept
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# plugins
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
 
 set -o vi
 
