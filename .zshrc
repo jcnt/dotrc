@@ -38,6 +38,10 @@ if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
   alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
+if [[ $HOST = "jjuhasz--MacBookPro18" || $HOST = "jjuhaszQJHD2.vmware.com" || $HOST = "jump" || $HOST = "jjrhel"]]
+    TESTENV="hello"
+fi
+
 if [[ $HOST = "jump" ]]
     then
         alias k1='cp ~/.kube/config.cluster1 ~/.kube/config'
