@@ -96,6 +96,7 @@ if [ -f /usr/bin/kubectl ]; then
 fi
 
 alias p="python3"
+alias bp="bpython"
 alias codeget='cd ~/git/code; git fetch; git pull origin main; cd -'
 alias codepush='cd ~/git/code; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'

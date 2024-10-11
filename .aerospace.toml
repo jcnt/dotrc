@@ -122,6 +122,7 @@ alt-n = 'workspace Notes'
 alt-p = 'workspace Prague'
 alt-s = 'workspace Safari'
 alt-t = 'workspace Term'
+alt-v = 'workspace Preview'
 alt-z = 'workspace Zoom'
 
 
@@ -139,6 +140,7 @@ alt-shift-n = 'move-node-to-workspace Notes'
 alt-shift-p = 'move-node-to-workspace Prague'
 alt-shift-s = 'move-node-to-workspace Safari'
 alt-shift-t = 'move-node-to-workspace Term'
+alt-shift-v = 'move-node-to-workspace Preview'
 alt-shift-z = 'move-node-to-workspace Zoom'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
