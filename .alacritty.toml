@@ -1,3 +1,11 @@
+import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+   "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
 [font]
 normal = { family = "Hack Nerd Font Mono", style = "Regular" }
 bold = { family = "Hack Nerd Font Mono", style = "Bold" }
@@ -6,3 +14,4 @@ size = 14.0
 [window]
 decorations = "None"
 padding = { x = 0, y = 0 }
+
