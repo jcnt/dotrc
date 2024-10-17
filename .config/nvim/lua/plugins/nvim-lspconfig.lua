@@ -38,6 +38,7 @@ return {
         'quick_lint_js',
         'yamlls',
         'pyright',
+        'gopls',
       }
     })
 
@@ -102,6 +103,20 @@ return {
         },
       },
     }
+
+    lspconfig.gopls.setup {
+            cmd = {"gopls"},
+            filetypes = { "go", "gomod", "gowork", "gotmpl" },
+            settings = {
+                gopls = {
+                    completeUnimported = true,
+                    usePlaceholders = true,
+                    analyses = {
+                        unusedparams = true,
+                    }
+                }
+            }
+        }
 
     -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
     local open_floating_preview = vim.lsp.util.open_floating_preview
