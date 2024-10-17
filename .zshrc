@@ -97,8 +97,7 @@ fi
 
 alias p="python3"
 alias bp="bpython"
-alias codeget='cd ~/git/code; git fetch; git pull origin main; cd -'
-alias codepush='cd ~/git/code; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
+alias glazy='git commit -m "Lazy commit `date`"'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
 alias dotpush='cd ~/git/dotrc; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotclone='rm -rf ~/git/dotrc; git clone https://github.com/jcnt/dotrc ~/git/dotrc/'
