@@ -124,6 +124,7 @@ alt-s = 'workspace Safari'
 alt-t = 'workspace Term'
 alt-v = 'workspace Preview'
 alt-z = 'workspace Zoom'
+alt-w = 'workspace WhatsApp'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -142,6 +143,7 @@ alt-shift-s = 'move-node-to-workspace Safari'
 alt-shift-t = 'move-node-to-workspace Term'
 alt-shift-v = 'move-node-to-workspace Preview'
 alt-shift-z = 'move-node-to-workspace Zoom'
+alt-shift-w = 'move-node-to-workspace WhatsApp'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
