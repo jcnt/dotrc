@@ -33,8 +33,8 @@ prompt_jnrowe_precmd() {
     fi
 }
 
-PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 alias zsu='sudo su - -s /usr/bin/zsh'
+PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
     then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
