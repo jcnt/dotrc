@@ -1,20 +1,48 @@
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+
 # NOW setup PS1 
 #
 NEWLINE=$'\n'
+setopt prompt_subst
 
-PS1=${NEWLINE}%{%F{cyan}%}"%m %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
+autoload -U add-zsh-hook
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats \
+    '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f '
+zstyle ':vcs_info:*' enable git hg
+
+add-zsh-hook precmd prompt_jnrowe_precmd
+
+# git status https://github.com/JNRowe-retired-forks/oh-my-zsh/blob/master/themes/jnrowe.zsh-theme
+prompt_jnrowe_precmd() {
+    vcs_info
+
+    if [ -z "${vcs_info_msg_0_}" ]; then
+        _jnrowe_dir_status=""
+    elif ! git diff-index --cached --quiet --ignore-submodules HEAD 2>/dev/null; then
+        _jnrowe_dir_status="%F{1} %f"
+    elif ! git diff --no-ext-diff --ignore-submodules --quiet 2>/dev/null; then
+        _jnrowe_dir_status="%F{3} %f"
+    else
+        _jnrowe_dir_status="%F{2} %f"
+    fi
+}
+
+PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 alias zsu='sudo su - -s /usr/bin/zsh'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
-    then PS1=${NEWLINE}%{%F{red}%}"work %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
+    then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
     alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
-    then PS1=${NEWLINE}%{%F{red}%}"thirteen %{%F{yellow}%}[%1~] %B%(?.%F{green}.%F{red})%#%f %{$reset_color%}"
+    then PROMPT='${NEWLINE}%{%F{red}%}thirteen %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
     alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
