@@ -44,8 +44,8 @@ if [[ -f ~/.zsh_zinit ]]
         zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
         
         # plugins
-        zinit snippet OMZP::git
-        zinit snippet OMZP::kubectl
+#        zinit snippet OMZP::git
+#        zinit snippet OMZP::kubectl
 fi
 
 if [[ $HOST = "jump" ]]
