@@ -33,17 +33,14 @@ prompt_jnrowe_precmd() {
     fi
 }
 
-alias zsu='sudo su - -s /usr/bin/zsh'
 PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
     then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
-    alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
     then PROMPT='${NEWLINE}%{%F{red}%}thirteen %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
-    alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 if [[ -f ~/.zsh_zinit ]]
@@ -115,12 +112,18 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
 
-
 set -o vi
 
+# aliases
 alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
+fi
+
+alias zsu='sudo su - -s /usr/bin/zsh'
+if [[ $OSTYPE = "darwin23.0" ]]
+    then
+    alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
 alias p="python3"
