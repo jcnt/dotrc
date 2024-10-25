@@ -1,7 +1,6 @@
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
-
 # NOW setup PS1 
 #
 NEWLINE=$'\n'
@@ -9,12 +8,6 @@ setopt prompt_subst
 
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' actionformats \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats \
-    '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f '
-zstyle ':vcs_info:*' enable git hg
 
 add-zsh-hook precmd prompt_jnrowe_precmd
 
@@ -25,11 +18,11 @@ prompt_jnrowe_precmd() {
     if [ -z "${vcs_info_msg_0_}" ]; then
         _jnrowe_dir_status=""
     elif ! git diff-index --cached --quiet --ignore-submodules HEAD 2>/dev/null; then
-        _jnrowe_dir_status="%F{1} %f"
+        _jnrowe_dir_status="%F{red} %f"
     elif ! git diff --no-ext-diff --ignore-submodules --quiet 2>/dev/null; then
-        _jnrowe_dir_status="%F{3} %f"
+        _jnrowe_dir_status="%F{yellow} %f"
     else
-        _jnrowe_dir_status="%F{2} %f"
+        _jnrowe_dir_status="%F{green} %f"
     fi
 }
 
