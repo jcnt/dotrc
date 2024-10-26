@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Session Management
-opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Line Numbers
 opt.relativenumber = true
@@ -30,7 +30,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 vim.diagnostic.config {
-  float = { border = "rounded" }, -- add border to diagnostic popups
+    float = { border = "rounded" }, -- add border to diagnostic popups
 }
 
 -- Backspace
@@ -38,6 +38,7 @@ opt.backspace = "indent,eol,start"
 
 -- Clipboard
 opt.clipboard:append("unnamedplus")
+vim.api.nvim_set_option("clipboard", "unnamed")
 
 -- Split Windows
 opt.splitright = true
@@ -53,4 +54,3 @@ opt.mouse = ""
 opt.foldlevel = 20
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
-
