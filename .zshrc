@@ -122,7 +122,7 @@ fi
 alias p="python3"
 alias bp="bpython"
 alias gr="go run"
-alias glpush='git add .; git commit -m "Lazy commit `date`"; git push;'
+alias glpush='cd `git rev-parse --show-toplevel`;git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias glget='git fetch; git pull origin main;'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
 alias dotpush='cd ~/git/dotrc; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
