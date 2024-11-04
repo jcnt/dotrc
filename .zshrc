@@ -9,31 +9,33 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
-add-zsh-hook precmd prompt_jnrowe_precmd
+add-zsh-hook precmd prompt_git_precmd
 
-# git status https://github.com/JNRowe-retired-forks/oh-my-zsh/blob/master/themes/jnrowe.zsh-theme
-prompt_jnrowe_precmd() {
+# git status based on https://github.com/JNRowe-retired-forks/oh-my-zsh/blob/master/themes/jnrowe.zsh-theme
+prompt_git_precmd() {
     vcs_info
 
     if [ -z "${vcs_info_msg_0_}" ]; then
-        _jnrowe_dir_status=""
+        git_dir_status=""
     elif ! git diff-index --cached --quiet --ignore-submodules HEAD 2>/dev/null; then
-        _jnrowe_dir_status="%F{red} %f"
+        git_dir_status="%F{red} %f"
     elif ! git diff --no-ext-diff --ignore-submodules --quiet 2>/dev/null; then
-        _jnrowe_dir_status="%F{yellow} %f"
+        git_dir_status="%F{red} %f"
+    elif [[ `git status |grep -c ^Untracked` > 0 ]]; then
+        git_dir_status="%F{red} %f"
     else
-        _jnrowe_dir_status="%F{green} %f"
+        git_dir_status="%F{green} %f"
     fi
 }
 
-PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
-    then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+    then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
-    then PROMPT='${NEWLINE}%{%F{red}%}thirteen %{%F{yellow}%}[%1~] ${_jnrowe_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+    then PROMPT='${NEWLINE}%{%F{red}%}thirteen %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 fi
 
 if [[ -f ~/.zsh_zinit ]]
