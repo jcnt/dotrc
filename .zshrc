@@ -72,6 +72,8 @@ if [[ $HOST = "jump" ]]
     then
         alias k1='cp ~/.kube/config.cluster1 ~/.kube/config'
         alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
+        alias k3='cp ~/.kube/config.cluster3 ~/.kube/config'
+        alias k4='cp ~/.kube/config.cluster4 ~/.kube/config'
 fi
 
 if [[ $OSTYPE = "darwin23.0" ]]
