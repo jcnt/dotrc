@@ -28,14 +28,14 @@ prompt_git_precmd() {
     fi
 }
 
-PROMPT='${NEWLINE}%{%F{cyan}%}%m %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+PROMPT='${NEWLINE}%{%F{blue}%}%m %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]
-    then PROMPT='${NEWLINE}%{%F{red}%}work %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+    then PROMPT='${NEWLINE}%{%F{magenta}%}work %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 fi
 
 if [[ $HOST = "jjuhaszQJHD2.vmware.com" ]]
-    then PROMPT='${NEWLINE}%{%F{red}%}thirteen %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
+    then PROMPT='${NEWLINE}%{%F{magenta}%}thirteen %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 fi
 
 if [[ -f ~/.zsh_zinit ]]
