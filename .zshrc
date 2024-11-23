@@ -74,6 +74,10 @@ if [[ $HOST = "jump" ]]
         alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
         alias k3='cp ~/.kube/config.cluster3 ~/.kube/config'
         alias k4='cp ~/.kube/config.clusterbk ~/.kube/config'
+fi
+
+if [[ $HOST = "jjpxbkm" || $HOST = "jump" ]]
+    then
         function lbstat() {echo "show stat" | sudo socat /run/haproxy/admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
 fi
 
