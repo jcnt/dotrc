@@ -136,7 +136,6 @@ alias glget='git fetch; git pull origin main;'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
 alias dotpush='cd ~/git/dotrc; git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias dotclone='rm -rf ~/git/dotrc; git clone https://github.com/jcnt/dotrc ~/git/dotrc/'
-alias pxd="px-deploy"
 
 px-deploy() { [ "$DEFAULTS" ] && params="-v $DEFAULTS:/px-deploy/.px-deploy/defaults.yml" ; docker run --network host -it -e PXDUSER=$USER --rm --name px-deploy.$$ $=params -v $HOME/.px-deploy:/px-deploy/.px-deploy px-deploy /root/go/bin/px-deploy $* ; }
 
