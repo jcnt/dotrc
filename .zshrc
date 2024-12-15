@@ -128,6 +128,7 @@ if [[ $OSTYPE = "darwin23.0" ]]
     alias zsu="sudo su -l root -c '/bin/zsh'"
 fi
 
+alias grep="grep --color"
 alias p="python3"
 alias bp="bpython"
 alias gr="go run"
