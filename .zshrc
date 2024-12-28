@@ -93,6 +93,7 @@ fi
 
 if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
     alias vi="nvim"
+    EDITOR=nvim
 fi        
 
 if [ -f /usr/bin/kubectl ]; then
