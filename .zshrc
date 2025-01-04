@@ -91,20 +91,28 @@ if [[ $OSTYPE = "darwin23.0" ]]
         PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
 fi
 
-if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
-    alias vi="nvim"
-    EDITOR=nvim
-fi        
-
-if [ -f /usr/bin/kubectl ]; then
-    plugins=(
-      kubectl
-      go
-    )
+if [[ -f /snap ]]; 
+    then
+        PATH=$PATH:/snap/bin
 fi
 
-if [ -f /usr/bin/kubectl ]; then
-    source <(kubectl completion zsh)
+if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; 
+    then
+        alias vi="nvim"
+        EDITOR=nvim
+fi        
+
+if [ -f /usr/bin/kubectl ]; 
+    then
+        plugins=(
+            kubectl
+            go
+        )
+fi
+
+if [ -f /usr/bin/kubectl ]; 
+    then
+        source <(kubectl completion zsh)
 fi
 
 # Keep 10000 lines of history within the shell and save it to ~/.zsh_history:

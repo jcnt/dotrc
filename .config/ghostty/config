@@ -1,4 +1,10 @@
 font-family = Hack Nerd Font Mono
+# font-family = MesloLG Nerd Font
+# font-family = JetBrainsMono Nerd Font
+# font-family = Literation Nerd Font
+# font-family = FiraCode Nerd Font
+# font-family = Iosevka Nerd Font
+# font-family = SauceCodePro Nerd Font
 font-size = 14
 theme = catppuccin-mocha
 macos-titlebar-style = hidden
