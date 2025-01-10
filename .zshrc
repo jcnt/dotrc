@@ -134,6 +134,7 @@ set -o vi
 alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
+    alias pxctl="kubectl exec -n portworx `kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}'` -- pxctl --color"
 fi
 
 alias zsu='sudo su - -s /usr/bin/zsh'
