@@ -7,9 +7,8 @@ import = [
 ]
 
 [font]
-#normal = { family = "Hack Nerd Font Mono", style = "Regular" }
-#bold = { family = "Hack Nerd Font Mono", style = "Bold" }
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
+normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+bold = { family = "Hack Nerd Font Mono", style = "Bold" }
 size = 14.0
 
 [window]
