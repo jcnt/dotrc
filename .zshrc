@@ -100,7 +100,7 @@ if [[ -f /snap ]]; then
     PATH=$PATH:/snap/bin
 fi
 
-if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim ]]; then
+if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim || -f /snap/bin/nvim ]]; then
     alias vi="nvim"
     EDITOR=nvim
 fi        
