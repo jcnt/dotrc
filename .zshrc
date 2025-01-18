@@ -85,7 +85,7 @@ if [[ $HOST = "jump" ]]; then
 fi
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then
-    alias prg='ssh ubu tmux attach'
+    alias prg='ssh arch tmux attach'
 fi
 
 if [[ $HOST = "jjpxbkm" || $HOST = "jump" ]]; then
@@ -136,6 +136,7 @@ alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
     alias pxctl="kubectl exec -n portworx `kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}'` -- pxctl --color"
+    alias storkctl="kubectl exec -n portworx `kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}'` -- /storkctl/linux/storkctl"
 fi
 
 alias zsu='sudo su - -s /usr/bin/zsh'
