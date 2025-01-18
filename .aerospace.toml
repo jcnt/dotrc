@@ -15,7 +15,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -24,7 +24,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 0
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -122,10 +122,10 @@ alt-m = 'workspace Messenger'
 alt-n = 'workspace Notes'
 alt-x = 'workspace Prague'
 alt-s = 'workspace Safari'
-alt-v = 'workspace Preview'
+alt-p = 'workspace Preview'
 alt-z = 'workspace Zoom'
 alt-w = 'workspace WhatsApp'
-alt-e = 'workspace Viber'
+alt-v = 'workspace Viber'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -142,10 +142,10 @@ alt-shift-m = 'move-node-to-workspace Messenger'
 alt-shift-n = 'move-node-to-workspace Notes'
 alt-shift-x = 'move-node-to-workspace Prague'
 alt-shift-s = 'move-node-to-workspace Safari'
-alt-shift-v = 'move-node-to-workspace Preview'
+alt-shift-p = 'move-node-to-workspace Preview'
 alt-shift-z = 'move-node-to-workspace Zoom'
 alt-shift-w = 'move-node-to-workspace WhatsApp'
-alt-shift-e = 'move-node-to-workspace Viber'
+alt-shift-v = 'move-node-to-workspace Viber'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
