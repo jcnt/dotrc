@@ -135,6 +135,9 @@ set -o vi
 alias ls='ls -F --color'
 if [ -f /usr/bin/kubectl ]; then
     alias k='kubectl'
+fi
+
+if [[ -f ~/.px ]]; then
     alias pxctl="kubectl exec -n portworx `kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}'` -- pxctl --color"
     alias storkctl="kubectl exec -n portworx `kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}'` -- /storkctl/linux/storkctl"
 fi
