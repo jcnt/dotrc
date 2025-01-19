@@ -142,11 +142,6 @@ if [[ -f ~/.px ]]; then
     alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
-if [[ -f ~/.pxd ]]; then
-    alias pxctl="kubectl exec -n portworx \$(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}') -- pxctl --color"
-    alias storkctl="kubectl exec -n portworx \$(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
-fi
-
 alias zsu='sudo su - -s /usr/bin/zsh'
 if [[ $OSTYPE = "darwin23.0" ]]; then
     alias zsu="sudo su -l root -c '/bin/zsh'"
