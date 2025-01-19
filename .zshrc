@@ -143,8 +143,8 @@ if [[ -f ~/.px ]]; then
 fi
 
 if [[ -f ~/.pxd ]]; then
-    alias pxctl="kubectl exec -n portworx `kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}'` -- pxctl --color"
-    alias storkctl="kubectl exec -n portworx `kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}'` -- /storkctl/linux/storkctl"
+    alias pxctl="kubectl exec -n portworx \$(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}') -- pxctl --color"
+    alias storkctl="kubectl exec -n portworx \$(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
 alias zsu='sudo su - -s /usr/bin/zsh'
