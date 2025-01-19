@@ -77,7 +77,7 @@ if [[ -f ~/.zsh_zinit ]]; then
 #        zinit snippet OMZP::kubectl
 fi
 
-if [[ $HOST = "jump" ]]; then
+if [[ $HOST = "jump" || $HOST = "arch" ]]; then
     alias k1='cp ~/.kube/config.cluster1 ~/.kube/config'
     alias k2='cp ~/.kube/config.cluster2 ~/.kube/config'
     alias k3='cp ~/.kube/config.cluster3 ~/.kube/config'
@@ -138,6 +138,11 @@ if [ -f /usr/bin/kubectl ]; then
 fi
 
 if [[ -f ~/.px ]]; then
+    alias pxctl="kubectl exec -n portworx $(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}') -- pxctl --color"
+    alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
+fi
+
+if [[ -f ~/.pxd ]]; then
     alias pxctl="kubectl exec -n portworx `kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}'` -- pxctl --color"
     alias storkctl="kubectl exec -n portworx `kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}'` -- /storkctl/linux/storkctl"
 fi
