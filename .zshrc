@@ -91,7 +91,7 @@ if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then
 fi
 
 if [[ $HOST = "jjpxbkm" || $HOST = "arch" ]]; then
-    function lbstat() {echo "show stat" | sudo socat /run/haproxy/admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
+    function lbstat() {echo "show stat" | sudo socat /run/haproxy-admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
 fi
 
 if [[ $OSTYPE = "darwin23.0" ]]; then
