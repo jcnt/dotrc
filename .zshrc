@@ -25,7 +25,7 @@ add-zsh-hook precmd prompt_git_precmd
 prompt_git_precmd() {
     vcs_info
 
-    if [ -z "${vcs_info_msg_0_}" ]; then
+    if [[ -z "${vcs_info_msg_0_}" ]]; then
         git_dir_status=""
     elif ! git diff-index --cached --quiet --ignore-submodules HEAD 2>/dev/null; then
         git_dir_status="%F{red} %f"
@@ -53,7 +53,7 @@ if [[ -f ~/.zsh_zinit ]]; then
     ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
     
     # download zinit if it's not there yet
-    if [ ! -d "$ZINIT_HOME" ]; then
+    if [[ ! -d "$ZINIT_HOME" ]]; then
         mkdir -p "$(dirname $ZINIT_HOME)"
         git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
     fi 
@@ -84,13 +84,14 @@ if [[ $HOST = "jump" || $HOST = "arch" ]]; then
     alias k4='cp ~/.kube/config.cluster4 ~/.kube/config'
     alias k5='cp ~/.kube/config.cluster5 ~/.kube/config'
     alias k6='cp ~/.kube/config.clusterbk ~/.kube/config'
+    alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
 if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then
     alias prg='ssh arch tmux attach'
 fi
 
-if [[ $HOST = "jjpxbkm" || $HOST = "arch" ]]; then
+if [[ $HOST = "bkm" || $HOST = "arch" ]]; then
     function lbstat() {echo "show stat" | sudo socat /run/haproxy-admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
 fi
 
@@ -107,14 +108,14 @@ if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim || -f /snap/bin/nvim ]]; the
     EDITOR=nvim
 fi        
 
-if [ -f /usr/bin/kubectl ]; then
+if [[ -f /usr/bin/kubectl ]]; then
     plugins=(
         kubectl
         go
     )
 fi
 
-if [ -f /usr/bin/kubectl ]; then
+if [[ -f /usr/bin/kubectl ]]; then
     source <(kubectl completion zsh)
 fi
 
@@ -135,13 +136,12 @@ set -o vi
 
 # aliases
 alias ls='ls -F --color'
-if [ -f /usr/bin/kubectl ]; then
+if [[ -f /usr/bin/kubectl ]]; then
     alias k='kubectl'
 fi
 
 if [[ -f ~/.px ]]; then
     alias pxctl="kubectl exec -n portworx $(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}') -- pxctl --color"
-    alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
 alias zsu='sudo su - -s /usr/bin/zsh'
