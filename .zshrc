@@ -90,7 +90,7 @@ if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then
     alias prg='ssh arch tmux attach'
 fi
 
-if [[ $HOST = "jjpxbkm" || $HOST = "jump" ]]; then
+if [[ $HOST = "jjpxbkm" || $HOST = "arch" ]]; then
     function lbstat() {echo "show stat" | sudo socat /run/haproxy/admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
 fi
 
