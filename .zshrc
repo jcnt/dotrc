@@ -150,6 +150,7 @@ if [[ $OSTYPE = "darwin23.0" ]]; then
 fi
 
 alias grep="grep --color"
+alias t="tmux"
 alias p="python3"
 alias bp="bpython"
 alias gr="go run"
