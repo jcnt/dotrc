@@ -95,7 +95,7 @@ if [[ $HOST = "bkm" || $HOST = "arch" ]]; then
     function lbstat() {echo "show stat" | sudo socat /run/haproxy-admin.sock stdio |awk -F',' {'printf ("%15s %15s %15s\n", $1, $2, $18)'};}
 fi
 
-if [[ $OSTYPE = "darwin23.0" ]]; then
+if [[ $OSTYPE = "darwin24.0" || $OSTYPE = "darwin23.0" ]]; then
     PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/
 fi
 
