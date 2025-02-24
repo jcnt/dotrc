@@ -142,6 +142,7 @@ fi
 
 if [[ -f ~/.px ]]; then
     alias pxctl="kubectl exec -n portworx $(kubectl get pods -l name=portworx -n portworx -o jsonpath='{.items[0].metadata.name}') -- pxctl --color"
+    alias agevent="kubectl get events --field-selector involvedObject.kind=AutopilotRule --all-namespaces"
 fi
 
 alias zsu='sudo su - -s /usr/bin/zsh'
