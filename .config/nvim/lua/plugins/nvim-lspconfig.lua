@@ -33,11 +33,10 @@ return {
                 'html',
                 'lua_ls',
                 'jsonls',
-                --        'lemminx',
                 'marksman',
                 'quick_lint_js',
                 'yamlls',
-                'pyright',
+                'pylsp',
                 'gopls',
             }
         })
