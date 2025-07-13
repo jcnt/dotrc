@@ -104,6 +104,7 @@ return {
             },
         }
 
+
         lspconfig.gopls.setup {
             cmd = { "gopls" },
             filetypes = { "go", "gomod", "gowork", "gotmpl" },
