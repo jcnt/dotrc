@@ -6,5 +6,5 @@ font-family = Hack Nerd Font Mono
 # font-family = Iosevka Nerd Font
 # font-family = SauceCodePro Nerd Font
 font-size = 14
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 macos-titlebar-style = hidden
