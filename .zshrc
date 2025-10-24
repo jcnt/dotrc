@@ -40,7 +40,7 @@ prompt_git_precmd() {
 
 PROMPT='${NEWLINE}%{%F{blue}%}%m %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 
-if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then 
+if [[ $HOST = "jjuhasz--Mac15" ]]; then 
     PROMPT='${NEWLINE}%{%F{magenta}%}work %{%F{yellow}%}[%1~] ${git_dir_status}%B%(?.%F{green}.%F{red})%#%f %{$reset_color%}'
 fi
 
@@ -87,7 +87,7 @@ if [[ $HOST = "jump" || $HOST = "arch" ]]; then
     alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
-if [[ $HOST = "jjuhasz--MacBookPro18" ]]; then
+if [[ $HOST = "jjuhasz--Mac15" ]]; then
     alias prg='ssh arch tmux attach'
 fi
 
@@ -96,7 +96,7 @@ if [[ $HOST = "bkm" || $HOST = "arch" ]]; then
 fi
 
 if [[ $OSTYPE = "darwin24.0" || $OSTYPE = "darwin23.0" ]]; then
-    PATH=$PATH:/opt/homebrew/bin:/usr/local/go/bin/:~/go/bin/:/Library/Frameworks/Python.framework/Versions/Current/bin/
+    PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin/:~/go/bin/:/Library/Frameworks/Python.framework/Versions/Current/bin/
 fi
 
 if [[ -f /snap ]]; then
