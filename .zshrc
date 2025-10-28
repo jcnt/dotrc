@@ -153,6 +153,7 @@ fi
 alias grep="grep --color"
 alias t="tmux"
 alias p="python3"
+alias s="sudo"
 alias bp="bpython"
 alias gr="go run"
 alias glpush='cd `git rev-parse --show-toplevel`;git add .; git commit -m "Lazy commit `date`"; git push; cd -'
