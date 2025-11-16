@@ -7,11 +7,18 @@ return {
         },
         init = function() vim.g.barbar_auto_setup = false end,
         opts = {
-            relativenumbers = true
-            -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-            -- animation = true,
-            -- insert_at_start = true,
-            -- …etc.
+            relativenumbers = true,
+            hide = { inactive = true },
+            icons = {
+                -- Configure the base icons on the bufferline.
+                -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
+                gitsigns = {
+                    added = { enabled = true, icon = '+' },
+
+                    changed = { enabled = true, icon = '~' },
+                    deleted = { enabled = true, icon = '-' },
+                },
+            },
         },
         version = '^1.0.0', -- optional: only update when a new 1.x version is released
     },
