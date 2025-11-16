@@ -8,7 +8,6 @@ return {
         init = function() vim.g.barbar_auto_setup = false end,
         opts = {
             relativenumbers = true,
-            hide = { inactive = true },
             icons = {
                 -- Configure the base icons on the bufferline.
                 -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
