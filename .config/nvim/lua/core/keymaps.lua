@@ -19,6 +19,19 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close a tab
 keymap.set("n", "<leader>tn", ":tabn<CR>")     -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>")     -- previous tab
 
+-- Buffers
+keymap.set("n", "<leader>bn", ":BufferNext<CR>")     -- next buffer
+keymap.set("n", "<leader>bp", ":BufferPrevious<CR>") -- next buffer
+keymap.set("n", "<leader>b1", ":BufferGoto 1<CR>")   -- next buffer
+keymap.set("n", "<leader>b2", ":BufferGoto 2<CR>")   -- next buffer
+keymap.set("n", "<leader>b3", ":BufferGoto 3<CR>")   -- next buffer
+keymap.set("n", "<leader>b4", ":BufferGoto 4<CR>")   -- next buffer
+keymap.set("n", "<leader>b5", ":BufferGoto 5<CR>")   -- next buffer
+keymap.set("n", "<leader>b6", ":BufferGoto 6<CR>")   -- next buffer
+keymap.set("n", "<leader>b7", ":BufferGoto 7<CR>")   -- next buffer
+keymap.set("n", "<leader>b8", ":BufferGoto 8<CR>")   -- next buffer
+keymap.set("n", "<leader>b9", ":BufferGoto 9<CR>")   -- next buffer
+
 -- Diff keymaps
 keymap.set("n", "<leader>cc", ":diffput<CR>")   -- put diff from current to other during diff
 keymap.set("n", "<leader>cj", ":diffget 1<CR>") -- get diff from left (local) during merge

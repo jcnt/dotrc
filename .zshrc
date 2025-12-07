@@ -96,7 +96,7 @@ if [[ $HOST = "bkm" || $HOST = "arch" ]]; then
 fi
 
 if [[ $OSTYPE = "darwin24.0" || $OSTYPE = "darwin23.0" ]]; then
-    PATH=/opt/homebrew/bin:$PATH:/usr/local/go/bin/:~/go/bin/:/Library/Frameworks/Python.framework/Versions/Current/bin/
+    PATH=/opt/homebrew/bin:$PATH
 fi
 
 if [[ -f /snap ]]; then
