@@ -29,12 +29,10 @@ return {
             -- Install these LSPs automatically
             ensure_installed = {
                 'bashls',
-                'cssls',
                 'html',
                 'lua_ls',
                 'jsonls',
                 'marksman',
-                'quick_lint_js',
                 'yamlls',
                 'pylsp',
                 'gopls',
