@@ -103,11 +103,6 @@ if [[ -f /snap ]]; then
     PATH=$PATH:/snap/bin
 fi
 
-if [[ -f /opt/homebrew/bin/nvim || -f /usr/bin/nvim || -f /snap/bin/nvim ]]; then
-    alias vi="nvim"
-    EDITOR=nvim
-fi        
-
 if [[ -f /usr/bin/kubectl ]]; then
     plugins=(
         kubectl
@@ -156,6 +151,7 @@ alias p="python3"
 alias s="sudo"
 alias bp="bpython"
 alias gr="go run"
+alias vi=vim
 alias glpush='cd `git rev-parse --show-toplevel`;git add .; git commit -m "Lazy commit `date`"; git push; cd -'
 alias glget='git fetch; git pull origin main;'
 alias dotget='cd ~/git/dotrc; git fetch; git pull origin main; cd -'
