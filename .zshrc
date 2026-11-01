@@ -84,7 +84,7 @@ if [[ $HOST = "jump" || $HOST = "arch" ]]; then
     alias k3='cp ~/.kube/config.cluster3 ~/.kube/config'
     alias k4='cp ~/.kube/config.cluster4 ~/.kube/config'
     alias k5='cp ~/.kube/config.cluster5 ~/.kube/config'
-    alias k6='cp ~/.kube/config.clusterbk ~/.kube/confi'
+    alias k6='cp ~/.kube/config.clusterbk ~/.kube/config'
     alias storkctl="kubectl exec -n portworx $(kubectl get pods -n portworx -l name=stork -o jsonpath='{.items[0].metadata.name}') -- /storkctl/linux/storkctl"
 fi
 
