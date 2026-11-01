@@ -97,7 +97,7 @@ if [[ $HOST = "bkm" || $HOST = "arch" ]]; then
 fi
 
 if [[ $OSTYPE = "darwin24.0" || $OSTYPE = "darwin23.0" ]]; then
-    PATH=/opt/homebrew/bin:$PATH
+    PATH=/opt/homebrew/bin:~/.local/bin:$PATH
 fi
 
 if [[ -f /snap ]]; then
@@ -162,3 +162,7 @@ alias dotclone='rm -rf ~/git/dotrc; git clone https://github.com/jcnt/dotrc ~/gi
 
 px-deploy() { [ "$DEFAULTS" ] && params="-v $DEFAULTS:/px-deploy/.px-deploy/defaults.yml" ; docker run --network host -it -e PXDUSER=$USER --rm --name px-deploy.$$ $=params -v $HOME/.px-deploy:/px-deploy/.px-deploy px-deploy /root/go/bin/px-deploy $* ; }
 
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/jjuhasz/.local/bin:$PATH"
